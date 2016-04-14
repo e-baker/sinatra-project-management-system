@@ -25,7 +25,7 @@ Goal: To create a Sinatra-based project management system.
   a)  name
   b)  description
   c)  status
-  d)  manager_id
+  d)  project manager
   e)  category
 
   has many users
@@ -36,9 +36,11 @@ Goal: To create a Sinatra-based project management system.
   a)  name
   b)  due date
   c)  project
+  d)  category
 
   belongs to project
   has many users
+  has many categories
 
 *** 4. Categories ***
 
@@ -57,6 +59,8 @@ Goal: To create a Sinatra-based project management system.
 
   a)  user_id
   b)  project_id
+
+*** 7. 
 
 =============================
 TODO:
