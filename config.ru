@@ -6,6 +6,7 @@ end
 
 use Rack::MethodOverride
 run ApplicationController
-use UsersController
-use ProjectsController
-use TasksController
+use UserController
+use ProjectController
+use TaskController
+use CategoryController
