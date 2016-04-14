@@ -1,74 +1,8 @@
-users = [
-  {
-    id: 1,
-    email: 'eric@ericbaker.me',
-    first_name: 'Eric',
-    last_name: 'Baker',
-    password: 'password'
-  },
-  {
-    id: 2,
-    email: 'user@spms.com',
-    first_name: 'SPMS',
-    last_name: 'User',
-    password: 'userpassword'
-  }
-]
-
-users.each do |user|
-  User.create(user)
-end
-
-projects = [
-  {
-    id: 1,
-    name: 'First Project',
-    description: 'The first project in the SPMS.',
-    status: 'Beginning Stages',
-    user_id: 2,
-    category_id: 1
-  },
-  {
-    id: 2,
-    name: 'Sinatra Project Management System',
-    description: 'My first screw up with Sinatra...',
-    status: 'Planning',
-    user_id: 1,
-    category_id: 2
-  }
-]
-
-projects.each do |project|
-  Project.create(project)
-end
-
-tasks = [
-  {
-    id: 1,
-    name: 'Get Started',
-    due_date: '2016-04-28 01:33:48 -0400',
-    project_id: 1,
-    category_id: 3
-  }
-]
-
-tasks.each do |task|
-  Task.create(task)
-end
-
-categories = [
-  {
-    id: 1,
-    name: 'Testing',
-    type: 'Project'
-  },
-  {
-    id: 2,
-    name: 'Assessment',
-    type: 'Project'
-  }
-]
-
-categories.each do |category|
-  Category.create(category)
-end
+user1 = User.create(email: 'eric@ericbaker.me', first_name: 'Eric', last_name: 'Baker', password: 'password')
+user2 = User.create(email: 'user@spms.com', first_name: 'SPMS', last_name: 'User', password: 'userpassword')
+category1 = Category.create(name: 'Testing', cat_type: "Project")
+category2 = Category.create(name: 'Assessment', cat_type: "Project")
+category3 = Category.create(name: 'Move Your Ass', cat_type: "Task")
+project1 = Project.create(name: 'First Project', description: 'The first project in the SPMS.', status: 'Beginning Stages', user_id: user2.id, category_id: category1.id)
+project2 = Project.create(name: 'Sinatra Project Management System', description: 'My first screw up with Sinatra...', status: 'Planning', user_id: user1.id, category_id: category2.id)   
+task1 = Task.create( name: 'Get Started', due_date: '2016-04-28 01:33:48 -0400', project_id: project1.id, category_id: category3.id)

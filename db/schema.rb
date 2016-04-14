@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160414051816) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "cat_type"
   end
 
   create_table "projects", force: :cascade do |t|
