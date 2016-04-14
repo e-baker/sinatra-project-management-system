@@ -7,6 +7,3 @@ end
 use Rack::MethodOverride
 run ApplicationController
 use UserController
-use ProjectController
-use TaskController
-use CategoryController
