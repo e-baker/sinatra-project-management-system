@@ -1,8 +1,0 @@
-user1 = User.create(email: 'eric@ericbaker.me', first_name: 'Eric', last_name: 'Baker', password: 'password')
-user2 = User.create(email: 'user@spms.com', first_name: 'SPMS', last_name: 'User', password: 'userpassword')
-category1 = Category.create(name: 'Testing', cat_type: "Project")
-category2 = Category.create(name: 'Assessment', cat_type: "Project")
-category3 = Category.create(name: 'Move Your Ass', cat_type: "Task")
-project1 = Project.create(name: 'First Project', description: 'The first project in the SPMS.', status: 'Beginning Stages', user_id: user2.id, category_id: category1.id)
-project2 = Project.create(name: 'Sinatra Project Management System', description: 'My first screw up with Sinatra...', status: 'Planning', user_id: user1.id, category_id: category2.id)   
-task1 = Task.create( name: 'Get Started', due_date: '2016-04-28 01:33:48 -0400', project_id: project1.id, category_id: category3.id)
