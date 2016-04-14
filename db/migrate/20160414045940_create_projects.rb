@@ -4,8 +4,8 @@ class CreateProjects < ActiveRecord::Migration
       t.string  :name
       t.string  :description
       t.string  :status
-      t.integer :user_id
-      t.integer :category_id
+      t.belongs_to :owner, index: true
+      t.belongs_to :category, index: true
     end
   end
 end
