@@ -23,3 +23,22 @@ ActiveRecord::Schema.define(version: 20160414211748) do
   end
 
 end
+
+===================
+
+yep, I’d also drop categories from your app, you dont need them
+
+[5:12] 
+then I’d basically only give tasks a user_id
+
+[5:12] 
+so a task belongs to a user - CHECK
+
+[5:12] 
+and a task belongs to a project - CHECK
+
+[5:12] 
+so the tasks table is acting as a join table
+
+[5:12] 
+and a user has many projects through tasks
