@@ -5,7 +5,7 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li><p><a href="/tasks/<%= task.id %>"><%= task.description %></a><br /><% if task.user_id != session[:id] %>Assigned to: <%= User.find(task.user_id).name %><% end %></p></li>
+    <li><p><a href="/tasks/<%= task.id %>"><%= '<strike>' if task.status == 'Completed' %><%= task.description %></a><%= '</strike>' if task.status == 'Completed' %><br /><% if task.user_id != session[:id] %>Assigned to: <%= User.find(task.user_id).name %><% end %></p></li>
   <% end %>
 </ul>
 
