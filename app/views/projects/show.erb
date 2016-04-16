@@ -1,5 +1,5 @@
 <h1><%= @project.name %></h1>
-<a href="/projects/<%= @project.slug %>/edit">Edit Project</a>
+<% if @project.user_id == session[:id] %><a href="/projects/<%= @project.slug %>/edit">Edit Project</a><% end %>
 
 <% if @tasks.count > 0 %><h2>Tasks:</h2><% end %>
 

@@ -15,8 +15,8 @@ class Task < ActiveRecord::Base
   end
 
   def self.delete_project_tasks(project_id)
-    tasks = Task.find_by(project_id: project_id)
-    tasks.each { |task| task.delete }
+    tasks = Task.get_project_tasks(project_id)
+    tasks.each { |task| task.destroy }
   end
 
 end

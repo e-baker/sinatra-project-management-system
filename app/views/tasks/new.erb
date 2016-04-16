@@ -8,5 +8,9 @@
     <option value="<%= project.id %>"><%= project.name %></option>
   <% end %>
   </select></p>
+<p><select name="task[status]" id="task_status">
+  <option value="In Progress">In Progress</option>
+  <option value="Completed">Completed</option>
+</select></p>
 <p><input type="submit" value="Add Task"></p>
 </form>

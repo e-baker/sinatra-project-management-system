@@ -2,7 +2,7 @@
   <ul>
     <% @tasks.each do |task| %>
 
-      <li><a href="/tasks/<%= task.id %>"><%= task.description %></a> <em>(<%= task.project.name %>)</em>  -  <a href="/tasks/<%= task.id %>/edit">Edit</a></li>
+      <li><a href="/tasks/<%= task.id %>"><%= task.description %></a> <em>(<%= task.project.name %>)</em>  -  <a href="/tasks/<%= task.id %>/edit">Edit</a></li><br />
 
     <% end %> 
   </ul>

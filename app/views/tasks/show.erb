@@ -1,4 +1,5 @@
 <h1>Task Detail</h1>
 
 <h3>Description: <%= @task.description %><% if @task.user_id == session[:id] %> - <a href="/tasks/<%= @task.id %>/edit">Edit</a><% end %></h3>
-<h4>Project: <a href="/projects/<%= @project.slug %>"><%= @project.name %></h4>
+<h4>Project: <a href="/projects/<%= @project.slug %>"><%= @project.name %></a></h4>
+<h4>Status: <%= @task.status %></h4>

@@ -61,9 +61,9 @@ class TaskController < ApplicationController
   end
 
   patch '/tasks/:id' do
+    @task = Task.find(params[:id])
     if User.is_logged_in?(session)
       if session[:id] == @task.user_id
-        @task = Task.find(params[:id])
         @task.update(params[:task])
         @task.save
         redirect to "/tasks/#{@task.id}"
@@ -76,9 +76,9 @@ class TaskController < ApplicationController
   end
 
   delete '/tasks/:id' do 
+    @task = Task.find(params[:id])
     if User.is_logged_in?(session) && session[:id] == @task.user_id
-      @task = Task.find(params[:id])
-      @task.delete
+      @task.destroy
       redirect to "/tasks"
     else
       redirect to '/login'
