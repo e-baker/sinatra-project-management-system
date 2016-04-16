@@ -8,23 +8,30 @@ class UserController < ApplicationController
     erb :'users/signup'
   end
 
+  get '/logout' do
+    session.clear
+    redirect to '/login'
+  end
+
   post '/login' do
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
-      "Logged In."
+      session[:id] = @user.id
+      redirect to '/projects'
     else
-      "Error logging in."
+      erb :'/users/login', locals: {message: "Wrong Email or Password."}
     end
   end
 
   post '/signup' do
     if User.exists?(params[:email])
-      "Email taken."
+      erb :'users/signup', locals: {message: "That email is taken."}
     elsif !params.any? { |key, value| value.empty? }
       @user = User.create(params)
-      "Signed Up & Logged In."
+      session[:id] = @user.id
+      redirect to '/projects'
     else
-      "Error Signing up"
+      erb :'users/signup', locals: {message: "There was an error."}
     end
   end
 

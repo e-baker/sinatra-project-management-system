@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   def self.exists?(email)
     User.find_by(email: email) ? true : false
   end
+
+  def self.is_logged_in?(session)
+    session[:id] ? true : false
+  end
 end

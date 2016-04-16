@@ -4,6 +4,9 @@
     <title>Sinatra Project Management System</title>
   </head>
   <body>
+
     <%= yield %>
+
+    <% if session[:id] %><div style="margin:30px;"><div style="margin:0 auto;padding:4px 3px;width:90%;height:24px;vertical-align:middle;background:#ccc;border:1px solid black;"><a href="/projects" style="margin:0 10px;">Projects</a>  | <a href="/tasks" style="margin:0 10px;">Tasks</a> | <a href="/tasks/user" style="margin:0 10px;">My Tasks</a> | <a href="/logout">Logout</a></div></div><% end %>
   </body>
 </html>

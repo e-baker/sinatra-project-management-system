@@ -1,0 +1,7 @@
+<h1>Project List</h1>
+<a href="/projects/new">Add Project</a>
+<% @projects.each do |project| %>
+
+  <h2><a href="/projects/<%= project.slug %>"><%= project.name %></a></h2>
+
+<% end %>

@@ -10,7 +10,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    if session[:id]
+      redirect to '/tasks/user'
+    else
+      erb :index
+    end
   end
 
 end

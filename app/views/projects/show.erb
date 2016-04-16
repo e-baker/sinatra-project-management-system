@@ -1,0 +1,12 @@
+<h1><%= @project.name %></h1>
+<a href="/projects/<%= @project.slug %>/edit">Edit Project</a>
+
+<% if @tasks.count > 0 %><h2>Tasks:</h2><% end %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li><p><a href="/tasks/<%= task.id %>"><%= task.description %></a><br /><% if task.user_id != session[:id] %>Assigned to: <%= User.find(task.user_id).name %><% end %></p></li>
+  <% end %>
+</ul>
+
+<a href="/tasks/new">Add Task</a>

@@ -1,0 +1,7 @@
+<h1>Tasks</h1><a href="/tasks/new">New Task</a>
+
+<ul>
+<% @tasks.each do |task| %>
+  <li><a href="/tasks/<%= task.id %>"><%= task.description %></a> | <em><%= task.project.name %></em><% if task.user_id != session[:id] %><br />Assigned to: <%= User.find(task.user_id).name %><% end %></li><br />
+<% end %>
+</ul>
